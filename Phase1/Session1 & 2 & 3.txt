@@ -1,0 +1,203 @@
+
+whenever we want to access method of parent class -->super 
+
+this -- for current class instance
+
+final - can't change value of final variable
+--------------------
+Type casting:- two types:-
+
+Implicit type casting:-
+
+byte -->short --> int --> long-->float-->double
+
+Explicit type casting:-
+
+double-->float-->long-->int-->short-->byte
+
+--------------------
+Access Modifers:-
+
+
+
+Public --> Globally accessible through all classes and packages
+
+Private --> we can access only inside class 
+
+Another package and class:-
+
+Different package different class we can import before package and use extend keyword of main class --inheritance
+protected--> we can access
+
+
+Default --> we cannot access out side package
+
+
+
+--------------------------------
+
+Method Overloading:-
+
+calling methods with same name but different number of arguments or diff type of arguments
+
+----------------
+
+Constructors:-
+
+Constructors are used to initalize an object when it is created. It has same classname. No explicit return type.
+
+Two types:-
+1.Default Constructor 
+2.Parameterized Constructor
+
+
+
+Collections:-
+
+Java collection Frame work provides an architecture to store and manipluate a group of objects
+
+1. Interface - Interface allows collections to be independent of details of their representation
+2. class 
+3. Algorithms
+ 
+
+
+
+collection extends-- List,Queue,Set
+List implements -->Arraylist,Vector,Linkedlist
+
+Queue implements--> Linkedlist,priority queue
+
+Set implements --> Hashset, Linkedhashset, sortedset-->Treeset
+
+-----------------
+
+-->Arraylist is not syncronized but vector is syncronized
+-->array list is not a legacy class. It was introduced in JDK12 but vector islegacy
+-->array list is fast because it is not syncronized
+
+
+
+LinkedList:-
+
+// Linkedlist is a part of collection Frmaework in java.present in java.util package
+// It is Linear Data structure and elements are not stored in contigious memory location.
+// Every element is separate object with data part and address.
+// every element is linked with pointer and address
+// each element is called node
+// due to dynamically insertion and deletion these are most preferable than arrays.
+
+------------------------
+
+
+QUEUE:-
+
+
+//queue is extension to queue
+// prirority queue doesn't allow null value
+// queue retrival operations are called remove,peek,poll
+
+-------------------------
+Set:
+1. HashSet:-
+
+
+	//hashset class implements Set Interface
+	// no gurantee that constant order of elements
+	// methods -- add, remove, contains, Size
+
+
+2. LinkedHashSet
+
+3. TreeSet:-
+
+	//treeset is most important implementation in sorted set in interface
+	// elements order is natural order arrnaging
+	// Treeset is extended of set(Interface)and implements of sortedset
+
+-----------------------
+
+
+
+
+Map:-
+The Map interface maps unique keys to values
+It contains a key that is an object used to retrive a avlue
+A map object only stores key value pairs
+
+Map -> HashMap, HashTable, TreeSet
+
+
+HashMap:-
+
+// HashMap is implemenetation of Map
+// It Inherits HashMap Class
+// It maintains Insertion Order
+// methods:- get, remove
+// It wont allow duplicate keys
+
+
+HashTable:-
+
+//Hashtable availabe in Java.util package
+// Null value as key or value is not allowed in Hashtable
+// It is printing as descending order for keys
+
+
+TreeMap:-
+// Insertion Order is Maintained
+// Null value as key is not allowed in TreeMap
+// // Null as value is allowed in TreeMap
+
+
+--------------------------
+
+
+Inner Class:-
+ 
+-->Class with in the Class also called as Nested Class
+--> can be declared ass public, private and protected
+--> Used to Achieve security mechanism
+
+--> when u access inner class using object of outer class it ask for a permission to launch inner class
+
+---------------
+
+String:--
+
+
+1. StringBuffer
+
+- StringBuffer is mutable. It means one can change the value of object.
+- The objects created using StringBuffer are stored in Heap
+- It is threadSafe
+- because of thread safe it works slower than StringBuilder
+
+Syntax:-
+
+StringBuffer sbr = new StringBuffer("Example1");
+
+
+
+
+2. StringBuilder:-
+
+-StringBuilder is mutable like StringBuffer
+- Its not thread Safe so it works faster than StringBuffer
+
+Syntax:-
+
+StringBuilder slr = new StringBuilder("example2")
+
+---------------------
+
+
+
+
+Regular Expression:- also called Regex -> Used in Validation--> Used for email searching, Password matching  things
+
+A reegular expression is an API used to define a pattern for searcching a string
+
+java.util.regex :-
+1.Class--> Matcher class, Pattern class, PatternSynatxException Class
+2.Interface -->MatchResult Interface
