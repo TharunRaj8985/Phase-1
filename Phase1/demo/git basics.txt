@@ -1,1 +1,168 @@
-Hello This is my First Git Execution
+Over view:-
+
+1. Understanding Source code Management(SCM) and its need
+
+2. LIST SCM types
+
+3. Evaluate different SCM types
+
+4. Get familiarity with GIT concepts
+
+5. Understanding GIT terminologies
+
+SCM(Source code Management) or VCS(Version control System)
+
+
+Different types of SCM:-
+
+Local - every thing will be present in local data base
+Ex:- RCS, SCCS
+
+Centralized - 
+- contains Master-slave architecture
+- make changes in local system and then upload to central sever
+- need connection with the server
+- no risk of losing data
+
+-contains only 1 repository
+
+Ex:- 
+CVS, Perforce
+
+DIsAdvantages:-
+if main server goes down developers cannot save versioned changes
+incase any database gets corrupeted entire history could be lost
+dependency on connection with remote
+Does not provide offline access(CVS)
+
+
+
+
+
+Distributed version control system:-
+
+we can have muliplt server and we are going to contain copy in local system repository.
+ex:- git, mercurial
+
+Advnatges:-
+
+- developers to clone the repositiry locally and work on that
+- entire project on local system hence faster
+-works in offline mode
+
+
+
+
+
+GIT project flow:-
+
+working directory:- 
+folder location where developer is making changes in the code. Its a local folder.
+
+if we want to add files to repository we need to add using git command to staging area
+
+staging area / index area:-
+where files will be present which are added to local repository.
+It provides unique id to each change set added by working area.
+
+commit moves from staging area to repository
+
+Repository :-
+.git directory will be present it contains all the related data
+
+
+
+
+
+
+
+GIT terminologies:-
+
+
+1. Git repository/.git directory/ Local repository:-
+
+-  repository is a data structure to store metadata of files and the directories
+- different projects have different repositories
+- multiple branches related information will also be stored in repository
+
+
+
+2. Working tree 
+- helps to see how files are present
+- users can change files in the working tree by modifyng, creating, and removing files
+- using "git status" one can see what exactly is there in working tree".
+
+
+3. commit:-
+ commit is a collection of content
+ 
+
+4. Revision:-
+-Basic entity that is managed in version control system
+-represents a new version of the source code
+- git implements revisions as every commit objects
+- we are identified by "SHA-1 hash" value for every commit.
+
+5. Head:-
+- head represents currently checked out branch of the last committed code.
+- while check out a commit, head changes its state called detached Head
+
+
+6. Index:-
+index is other name to staging area
+
+7.Tag:-
+tag is used to mark the important commit phase
+tag defines state of a branch in specific repository
+after development activity, one can recover the branches from tags.
+
+two types of tag:-
+1. Light weighted tag
+2. annotated tag
+
+8. URL:-
+-Location of remote repository.
+-Used for PUSH and PULL operation.
+-URL can be shared with other developers
+
+
+9. Branch:-
+
+-different version of the repository from the main project
+-helps to perform parallel development
+-developers work independently branches and then merge the code
+
+10. fork and checkout:-
+
+-fork is a mechanism which is happening on the server side and no interaction with client
+-to import repository from server to sever communication
+
+---checkout:-
+
+- for moving remote to local
+- to switch between two branches.
+
+
+11. Clone and Merge:-
+
+- To make a copy of remote repository to local repository using clone command.
+- helps to collabarate on the repository
+- we can do changes in the local repository
+
+---Merge:-
+-used to collect code done by git branch command and clubbed together into single branch
+-between development branches, feature branches and master branch.
+
+
+12.  Rebase:-
+- similar to megre
+- rebase used to merge content between two branches and convert to single branch
+- to have a clean history
+- to reduce number of branches
+
+
+
+ 
+
+
+

@@ -1,0 +1,347 @@
+Objectives:-
+
+Use Basic GIT commands
+Understand GIT configuration-Local,Global,System
+Use Git configuration commands
+
+
+Interfaces:- GUI, CLI(command line interface)
+
+-----------
+git init  - to initialzie a git repository in current folder
+
+git init[repo name] - to initialzie a git repository in specific folder
+
+then .git will be formed
+
+----------------------------
+
+we are doing operations in git,
+so for configuring author details:-
+
+for name:-
+
+git config --global user.name "Tharun"
+
+for email:-
+
+git config --global user.email "tharun@gmail.com"
+
+-------------------
+
+cd -- current directory
+
+ls -alrt  -- shows all the codes
+
+-------------------
+
+Adding files to staging area:-
+
+git add file_name -- moving file to staging area 
+
+to add multiple files:-
+
+git add file1 file2 file3
+
+to add multiple files together into the staging area like project files:-
+
+git add. file_name
+
+to add all non tracked files in current repository:-
+
+git add *
+
+git add -A
+
+
+adds currently tracked files whih have been modified to the staging area
+and also checks if those are deleted or not:-
+
+git add -u
+
+----------------------------------------------
+
+
+there might be temporary files which will be created like:-
+
+different files that should be ignored during adding to staging area:-
+
+
+1. run time files such as log, lock, cache, or temporary files
+2. Files with sensitive information such as configuration files passwords or API keys
+3. Compiled files such as .class, jar files, .o, so files
+4. Dependency directions, such as /vendor or /node modules
+5. system files like .Ds_store or Thumbs.db
+6.IDE or text editor configuration files
+
+we need to add all these files to .gitignore file
+ 
+It will not  show when we check with "git status" command
+
+how to give in git:-
+
+1. we can give path name
+2. /file_name - files with file name will be ignored in cd
+3. file_name - files with file name and in subdirectory also ignored
+4. file_name/
+5. *.log - ignore all log files
+6. logs/** -everything inside logs directory
+7. **/build  - file_name/build   - will be ignored
+8. foo/**/bar -- files between these directories will be ignored
+9. access?.log -- file names with access.log will be ignored like access0.log, access1.log
+10. foo?? -- file names with foo01,foo02 all will be ignored
+
+ 
+----------------------------------------------------
+
+git commit command -- to move from stage area to repo
+
+git commit -m 'comment' -- to add specific comment to commit
+
+we can direclty move file from working direcctory to repository
+
+git commit -a -m "commit without bypass staging"
+
+------------------------
+
+removing files from staging area
+
+git rm <filename>  -- removes file from staging area and working directory
+
+git rm --cached <filename>  -- removes from only staging area
+
+---
+we need to restore removed files and to roll back files:-
+
+git restore <filename>
+
+--
+to move a file
+
+git mv <filename>
+
+----
+to clean files:-
+
+to remove unwanted files from working directory
+
+this includes removing temporary build artifaccts or merge conflict files
+
+
+---
+git clean command will not remove :-
+
+files that being tracked, files that are commited and files that are listed in .gitignore
+
+to forcefully remove files listed in .gitignore --> git clean -x
+
+
+Usage of git clean:-
+
+
+git clean -n :- it will show all unwanted files 
+
+then
+
+git clean -f :- cleans untracked files
+
+then 
+
+ git clean -x :- to forcefully remove files listed in .gitignore
+
+
+-----------------
+
+check status:-
+
+git status
+
+with summary:-
+
+git status -s
+
+--------
+
+check files difference:- to know what are changes was done
+
+commands to see how the file differs from repository version and cd
+
+----
+To see details differences bewteen working directory and last commit:-
+
+git diff HEAD
+
+--
+difference between working directory and staging area
+
+git diff
+
+--
+difference between staging area and the last commit :-
+
+git diff staged
+
+--
+difference between two branches:-
+
+git diff master <branchname>
+
+
+----------------
+
+when we want to see changes using an external tool not in command line
+
+git difftool
+
+------------
+
+resetting a file:-
+ used to roll back changes
+
+
+resets all the file in repo:-
+
+git reset --head
+
+reset a specific file:-
+
+git reset --hard <filename>
+
+
+--------------
+
+reverting a commit:-
+
+git revert <commit hash code>
+
+we can get hash code using  "git log" command
+
+---------
+
+git log:-
+
+
+to view commit history:-
+
+Shows all commits,author details, commit hash, commit date and time, commit message
+
+---
+there might be many commits in a repository in that case:-
+
+
+git log -p <number of commit>
+
+ex: to see last commit:-
+
+git log -p -1
+
+
+---------
+git show:-
+
+it shows all indetails along with chnages done
+
+git show <commit_id>
+
+---
+--------------------------------------------------------------
+
+git configuration:-
+
+using git config command
+
+to get help for git config command :-
+
+git config -h , git config -help
+
+---------------
+
+three configuration levels:-
+
+system configuration:- Main configuration availabe at the global and local level also
+
+Highest level of config
+
+stored in /etc/gitconfig file
+
+settings can be overridden by global and local settings
+
+config can be inherited by global and local
+
+git config --system --list
+
+
+
+
+
+
+
+
+Global configuiration:- accessible only to a specific user not to other users:-
+
+git config --global --list
+
+shows author name and mail since its global one and shared across multiple proj and done at user level:-
+
+global config path:-
+
+cat /home/GIT/.gitconfig
+
+
+to set global configuation:-
+
+git config --global user.email tharun@gmail.com
+
+
+
+
+
+
+local configuration :- only related to local repository:-
+
+.git/config file will be present in local repository and we can perform add, remove and modify files in local repo and these
+are not accessible by global and system config
+
+git config --local --list
+
+
+git config --local user.email tharun@gmail.com
+
+
+
+------------------
+to change email id:-
+
+git config --global user.email "latestemail@gmail.com"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

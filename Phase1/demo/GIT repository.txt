@@ -1,0 +1,147 @@
+Objectives:-
+
+understand and use github
+
+explain different types of git repositories
+
+working with repo - forking, push/pull, branch
+
+-------------
+
+repo:-
+
+its like a folder contains source code files and each file's revision history
+
+Local repo 
+remote repo
+
+communicaation between local and remote repository will be of two typical proces:- PUSH and PULL
+
+-------------
+
+terminologies origin:-
+
+In GIT "origin" is shortand name for remote repo
+
+---
+when we dont have direct access with remote repo we will use fork method to get code into local repo
+
+------
+git clone -- to make a local copy of remote repo
+
+----------
+
+PUSH and PULL
+
+we can push data from local to remote repo 
+
+we can pull data from remote to local
+
+----------
+
+
+PULL = Fetch + merge
+
+git fetch  --> will not do any changes in local repo, it will just downloads the content
+
+for PULL --> it will download and merge the new changes in the local repo
+
+------------
+
+
+GIT --> cloud based repository hosting service
+
+-----------------------------------------
+
+
+create a  repository in your account:-
+
+to bring connection with local and github repo run command:-
+
+git remote add origin <remote_repo_url>
+
+remote_repo_url --> will be depending on different organizantions like bit bucket, github, gitlab
+
+ex:- git remote add origin https://GitHub.com/<username>/<local
+
+once remote repositories have been configured:-
+
+git remote  --> will connect with other repo
+
+git remote -v --> shows all the URL's at remote repo when listing curent connections
+
+-----------
+
+
+how to configure SSH keys:-
+
+-to connect and authenticate to remote servers and services
+- SSH keys , one can connect to github without supplying username and personal access token at each visit
+- for password less communication, SSH can be used
+
+to establish SSH communication:-
+
+public key, private key
+-------------------
+check for existing SSH keys:-
+
+ls -al ~/.ssh
+
+public keys:-
+
+id_rsa.pub
+id_ecdsa.pub
+id_ed25519.pub
+
+--------------
+
+generate a new key:-
+
+ssh-keygen -t ed25519 -c "mail_id"
+if keys exist, it asks for overwriting
+
+by default SSH keys will pickup id_RSA, id_DSA are standard and are not required to be loaded
+into the operating system
+
+if we want to add new key, we need to add key to SSH-agent
+
+set up SSH:-
+
+1. check / Run SSH-agent in background --> eval "$(ssh-agent -s)"
+
+2. Add key to SSH-agent --> ssh-add ~/.ssh/id_ed25519
+
+3. check the SSH connection ---> ssh -T git@github.com
+
+----------
+we can communicate with remote rep using HTTP, https, SSH
+
+we needd to add public key to create communication with remote 
+
+public key :- cat ~/.ssh/id_ed25519.pub
+
+----------------
+
+when u want to get latest version of repo:-
+
+git repo clone <url>
+
+--
+if we want to get a sepcific version from local repo 
+or latest update for a specific file:-
+
+git checkout --<filename>
+
+------------------------
+
+
+delete a branch only in local system :- git branch -d branch_name
+
+delete a local and remote branch :- git branch -d branch_name
+
+delete a branch only in the remote :- git push origin --delete branch_naame
+
+
+
+
+
